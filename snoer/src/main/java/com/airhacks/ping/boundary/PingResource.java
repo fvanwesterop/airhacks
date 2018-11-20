@@ -1,6 +1,7 @@
 package com.airhacks.ping.boundary;
 
 import com.airhacks.ping.entity.Snoer;
+import com.airhacks.ping.entity.SnoerOverdracht;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -26,6 +27,18 @@ public class PingResource {
     @Path("{id}")
     public Snoer find(@PathParam("id") int id) {
         return new Snoer(id, "blauw");
+    }
+
+    @GET
+    @Path("slices")
+    public List<SnoerOverdracht> slices() {
+        return this.snoerWinkel.slice();
+    }
+
+    @GET
+    @Path("strings")
+    public List<String> strings() {
+        return this.snoerWinkel.string();
     }
 
     @POST

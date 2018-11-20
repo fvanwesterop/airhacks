@@ -24,7 +24,12 @@ public class Snoer {
         this.kleur = kleur;
     }
 
+
     public Snoer() {
+    }
+
+    public int getLengte() {
+        return lengte;
     }
 
 
